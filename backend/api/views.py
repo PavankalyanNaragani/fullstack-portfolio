@@ -3,7 +3,7 @@ from .models import Project, Skill, Education, Experience
 from .serializers import ProjectSerializer, SkillSerializer, EducationSerializer, ExperienceSerializer
 
 class ProjectViewSet(viewsets.ModelViewSet):
-    queryset = Project.objects.all()
+    queryset = Project.objects.all().order_by('title')
     serializer_class = ProjectSerializer
     
     
